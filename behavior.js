@@ -7,7 +7,7 @@ ExampleBehavior.prototype = {
     var self = this;
     this.sayHello();
 
-    $("#bands li").click(function () {
+    $("#bands").on('click', 'li', function () {
       self.removeArtist(this);
     });
 
@@ -32,10 +32,6 @@ ExampleBehavior.prototype = {
     li.text(artist);
     li.addClass("new");
     $("#bands").append(li);
-
-    li.click(function () {
-      self.removeArtist(this);
-    });
 
     window.setTimeout(function () {
       li.removeClass("new");
